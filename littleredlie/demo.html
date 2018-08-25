@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Little Red Lie - Demo</title>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+    <script src="TemplateData/UnityProgress.js"></script>
+  </head>
+  <body class="template">
+    <div class="template-wrap clear">
+      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="600px" width="960px"></canvas>
+      <br>
+      <div class="logo"></div>
+      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+      <div class="title"><a href="http://www.littleredlie.com/" target="_blank">Little Red Lie</a> - Now available on <a href="http://store.steampowered.com/app/510520/Little_Red_Lie/" target="_blank">Windows</a>, <a href="http://store.steampowered.com/app/510520/Little_Red_Lie/" target="_blank">Mac</a>, <a href="https://itunes.apple.com/app/little-red-lie/id1272918691?mt=8" target="_blank">iOS</a> and <a href="https://play.google.com/store/apps/details?id=com.WZOGI.LittleRedLie" target="_blank">Android</a></div>
+    </div>
+    <script type='text/javascript'>
+  var Module = {
+    TOTAL_MEMORY: 268435456,
+    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+    compatibilitycheck: null,
+    backgroundColor: "#222C36",
+    splashStyle: "Light",
+    dataUrl: "Release/Demo.data",
+    codeUrl: "Release/Demo.js",
+    asmUrl: "Release/Demo.asm.js",
+    memUrl: "Release/Demo.mem",
+  };
+</script>
+<script src="Release/UnityLoader.js"></script>
+
+  </body>
+</html>
