@@ -4,47 +4,72 @@
 @import 'libs/skel';
 
 /*
-	Forty by Pixelarity
+	Landscape by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
 
 /* Button */
 
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
 	.button {
-		border: solid 2px !important;
+		border-color: inherit !important;
 
 		&.next {
-			padding-right: 1.75em;
+			padding-right: 2.5em;
 
-			&:before, &:after {
+			&:after {
 				display: none;
 			}
 		}
 	}
 
-/* Tiles */
+/* Form */
 
-	.tiles {
-		article {
-			width: 50%;
-			-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
-			background-size: cover;
+	form {
+		.field {
+			float: none;
+			padding-left: 0 !important;
 		}
 	}
 
-/* Banner */
-
-	#banner {
-		-ms-behavior: url('assets/js/ie/backgroundsize.min.htc');
-
-		&:after {
-			display: none;
-		}
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		border-color: inherit !important;
 	}
 
-/* Menu */
+/* Main */
 
-	#menu {
-		background: _palette(bg);
+	#main {
+		.slide {
+			&:before {
+				display: none;
+			}
+		}
+
+		nav {
+			> * {
+				line-height: 2.25em;
+				width: auto;
+				padding: 0 2em;
+			}
+
+			> .next {
+				&:before {
+					content: 'Next';
+				}
+			}
+
+			> .previous {
+				&:before {
+					content: 'Prev';
+				}
+			}
+		}
 	}

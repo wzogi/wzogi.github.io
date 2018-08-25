@@ -1,43 +1,66 @@
 /*
-	Forty by Pixelarity
+	Landscape by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
 
 /* Button */
 
+	input[type="submit"],
+	input[type="reset"],
+	input[type="button"],
+	button,
 	.button {
-		border: solid 2px !important;
+		border-color: inherit !important;
 	}
 
+		input[type="submit"].next,
+		input[type="reset"].next,
+		input[type="button"].next,
+		button.next,
 		.button.next {
-			padding-right: 1.75em;
+			padding-right: 2.5em;
 		}
 
-			.button.next:before, .button.next:after {
+			input[type="submit"].next:after,
+			input[type="reset"].next:after,
+			input[type="button"].next:after,
+			button.next:after,
+			.button.next:after {
 				display: none;
 			}
 
-/* Tiles */
+/* Form */
 
-	.tiles article {
-		width: 50%;
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
-		background-size: cover;
+	form .field {
+		float: none;
+		padding-left: 0 !important;
 	}
 
-/* Banner */
-
-	#banner {
-		-ms-behavior: url("assets/js/ie/backgroundsize.min.htc");
+	input[type="text"],
+	input[type="password"],
+	input[type="email"],
+	select,
+	textarea {
+		border-color: inherit !important;
 	}
 
-		#banner:after {
-			display: none;
-		}
+/* Main */
 
-/* Menu */
+	#main .slide:before {
+		display: none;
+	}
 
-	#menu {
-		background: #242943;
+	#main nav > * {
+		line-height: 2.25em;
+		width: auto;
+		padding: 0 2em;
+	}
+
+	#main nav > .next:before {
+		content: 'Next';
+	}
+
+	#main nav > .previous:before {
+		content: 'Prev';
 	}

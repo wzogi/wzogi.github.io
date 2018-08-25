@@ -4,112 +4,66 @@
 @import 'libs/skel';
 
 /*
-	Forty by Pixelarity
+	Landscape by Pixelarity
 	pixelarity.com | hello@pixelarity.com
 	License: pixelarity.com/license
 */
 
-/* Spotlights */
+/* Header */
 
-	.spotlights {
-		> section {
+	#header {
+		nav {
+			ul {
+				text-align: center;
+
+				li {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+/* Main */
+
+	#main {
+		.reel {
 			&:after {
 				content: '';
 				display: block;
 				clear: both;
 			}
-
-			> .image {
-				float: left;
-			}
-
-			> .content {
-				float: left;
-			}
-		}
-	}
-
-/* Tiles */
-
-	.tiles {
-		&:after {
-			content: '';
-			display: block;
-			clear: both;
 		}
 
-		article {
-			@include padding(8em, 4em);
+		.slide {
 			float: left;
-			height: auto;
-			max-height: none;
-			min-height: 0;
-		}
-	}
 
-/* Header */
+			> .inner {
+				padding-top: 8em;
+			}
 
-	#header {
-		.logo {
-			position: absolute;
-			top: 0;
-			left: 0;
-		}
+			&.left {
+				> .inner {
+					margin-right: auto;
+				}
+			}
 
-		nav {
-			position: absolute;
-			top: 0;
-			right: 0;
-		}
-	}
+			&.center {
+				> .inner {
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
 
-/* Banner */
-
-	#banner {
-		@include padding(6em, 0, (1em, 0, 0, 0));
-		background-attachment: scroll;
-		height: auto;
-		max-height: none;
-		min-height: 0;
-
-		> .inner {
-			.content {
-				display: block;
-
-				> * {
-					margin-left: 0;
-					margin: 0 0 _size(element-margin) 0;
+			&.right {
+				> .inner {
+					margin-left: auto;
 				}
 			}
 		}
 
-		&.major {
-			height: auto;
-			max-height: none;
-			min-height: 0;
-		}
-	}
-
-/* Contact */
-
-	#contact {
-		&:after {
-			content: '';
-			display: block;
-			clear: both;
-		}
-
-		> .inner {
+		nav {
 			> * {
-				float: left;
+				display: inline-block;
 			}
-		}
-	}
-
-/* Menu */
-
-	#menu {
-		.inner {
-			margin: 0 auto;
 		}
 	}
