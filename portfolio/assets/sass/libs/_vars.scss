@@ -1,3 +1,9 @@
+///
+/// Threshold by Pixelarity
+/// pixelarity.com | hello@pixelarity.com
+/// License: pixelarity.com/license
+///
+
 // Misc.
 	$misc: (
 		z-index-base:		10000
@@ -5,43 +11,45 @@
 
 // Duration.
 	$duration: (
-		menu:				0.35s,
-		transition:			0.2s,
-		banner:				2.5s
+		menu:				0.5s,
+		transition:			0.2s
 	);
 
 // Size.
 	$size: (
-		border-radius:		4px,
-		element-height:		2.75em,
-		element-margin:		2em,
-		inner:				65em
+		border-radius:		7px,
+		border-width:		3px,
+		element-height:		3rem,
+		element-margin:		2.75rem,
+		container-width:	80rem,
+		header-height:		6rem,
+		menu-width:			20rem
 	);
 
 // Font.
 	$font: (
-		family:				('Source Sans Pro', Helvetica, sans-serif),
+		family:				('Source Sans Pro', Arial, Helvetica, sans-serif),
 		family-fixed:		('Courier New', monospace),
 		weight:				300,
-		weight-bold:		600,
-		letter-spacing:		0.025em,
-		letter-spacing-alt:	0.25em
+		weight-bold:		700
 	);
 
 // Palette.
 	$palette: (
-		bg:					#242943,
-		bg-alt:				#2a2f4a,
-		fg:					#ffffff,
+		bg:					#24242a,
+		bg-dark:			#1f1f24,
+		bg-alt:				#2e2e35,
+		fg:					transparentize(#ffffff,0.5),
 		fg-bold:			#ffffff,
-		fg-light:			rgba(244,244,255,0.2),
-		border:				rgba(212,212,255,0.1),
-		border-bg:			rgba(212,212,255,0.035),
-		highlight:			#9bf1ff,
-		accent1:			#6fc3df,
-		accent2:			#8d82c4,
-		accent3:			#ec8d81,
-		accent4:			#e7b788,
-		accent5:			#8ea9e8,
-		accent6:			#87c5a4
+		fg-light:			transparentize(#ffffff,0.5),
+		border:				transparentize(#6e6e7a,0.5),
+		border-bg:			transparent,
+
+		accent1:			#5EA2C5,
+		accent1-hover:		saturate(lighten(#5EA2C5, 8), 8),
+		accent1-alt:		desaturate(darken(#5EA2C5, 5), 8),
+		accent1-dark:		saturate(darken(#5EA2C5, 18), 3),
+		accent2:			#49A8C4,
+		accent3:			#2e2e35,
+		accent3-alt:		#3e3e47
 	);

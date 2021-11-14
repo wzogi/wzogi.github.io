@@ -1,5 +1,5 @@
 ///
-/// Forty by Pixelarity
+/// Threshold by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -7,171 +7,162 @@
 /* Banner */
 
 	#banner {
-		@include vendor('align-items', 'center');
-		@include vendor('background-image', 'url("../../images/banner.jpg")');
-		@include vendor('display', 'flex');
-		@include padding(4em, 0, (2em, 0, 0, 0));
-		background-attachment: fixed;
-		background-position: center;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-bottom: 0 !important;
-		cursor: default;
-		height: 60vh;
-		margin-bottom: -3.25em;
-		max-height: 32em;
-		min-height: 22em;
-		position: relative;
-		top: -3.25em;
-
-		&:after {
-			@include vendor('transition', 'opacity #{_duration(banner)} ease');
-			@include vendor('transition-delay', '0.75s');
-			@include vendor('pointer-events', 'none');
-			background-color: _palette(bg);
-			content: '';
-			display: block;
-			height: 100%;
-			left: 0;
-			opacity: 0.85;
-			position: absolute;
-			top: 0;
-			width: 100%;
-			z-index: 1;
+		#header + & {
+			margin-top: (_size(header-height) * -1);
 		}
 
-		h1 {
-			font-size: 3.25em;
+		&.wrapper {
+			padding-bottom: 4rem;
+			padding-top: 16rem;
 		}
 
-		> .inner {
+		.inner {
+			@include vendor('display', 'flex');
+		}
+
+		.content {
 			@include vendor('transition', (
-				'opacity 1.5s ease',
-				'transform 0.5s ease-out',
-				'filter 0.5s ease',
-				'-webkit-filter 0.5s ease'
+				'opacity 0.75s ease-in-out',
+				'transform 0.75s ease-in-out'
 			));
-			padding: 0 !important;
+			padding-right: _size(element-margin);
+			width: 50%;
+
+			> :last-child {
+				margin-bottom: 0;
+			}
+
+			p {
+				font-size: 1.25rem;
+			}
+		}
+
+		.image-wrapper {
+			@include vendor('transition', (
+				'opacity 1.5s ease-in-out',
+				'transform 0.75s ease-in-out'
+			));
 			position: relative;
-			z-index: 2;
+			width: 50%;
+
+			.frame {
+				height: auto;
+				width: 100%;
+			}
 
 			.image {
-				display: none;
-			}
+				left: 0;
+				margin: 0 auto;
+				position: absolute;
+				right: 0;
+				top: 1rem;
+				width: 80%;
 
-			header {
-				width: auto;
-
-				> :first-child {
-					width: auto;
-
-					&:after {
-						max-width: 100%;
-					}
+				img {
+					object-fit: cover;
+					object-position: center;
+					width: 100%;
 				}
 			}
+		}
 
+		body.is-preload & {
 			.content {
-				@include vendor('display', 'flex');
-				@include vendor('align-items', 'center');
-				margin: 0 0 _size(element-margin) 0;
-
-				> * {
-					margin-left: 1.5em;
-					margin-bottom: 0;
-				}
-
-				> :first-child {
-					margin-left: 0;
-				}
-
-				p {
-					font-size: 0.7em;
-					font-weight: _font(weight-bold);
-					letter-spacing: _font(letter-spacing-alt);
-					text-transform: uppercase;
-				}
-			}
-		}
-
-		&.major {
-			height: 75vh;
-			min-height: 30em;
-			max-height: 50em;
-
-			&.alt {
-				opacity: 0.75;
-			}
-		}
-
-		&.style1 { &:after { background-color: _palette(accent1); } }
-		&.style2 { &:after { background-color: _palette(accent2); } }
-		&.style3 { &:after { background-color: _palette(accent3); } }
-		&.style4 { &:after { background-color: _palette(accent4); } }
-		&.style5 { &:after { background-color: _palette(accent5); } }
-		&.style6 { &:after { background-color: _palette(accent6); } }
-
-		body.is-loading & {
-			&:after {
-				opacity: 1.0;
+				@include vendor('transform', 'translateX(-0.5rem)');
+				opacity: 0;
 			}
 
-			> .inner {
-				@include vendor('filter', 'blur(0.125em)');
-				@include vendor('transform', 'translateX(-0.5em)');
+			.image-wrapper {
+				@include vendor('transform', 'translateY(0.5rem)');
 				opacity: 0;
 			}
 		}
 
-		@include breakpoint(large) {
-			background-attachment: scroll;
-		}
-
-		@include breakpoint(small) {
-			@include padding(3em, 0, (2em, 0, 0, 0));
-			height: auto;
-			margin-bottom: -2.75em;
-			max-height: none;
-			min-height: 0;
-			top: -2.75em;
-
-			h1 {
-				font-size: 2em;
-			}
-
-			> .inner {
-				.content {
-					display: block;
-
-					> * {
-						margin-left: 0;
-						margin-bottom: _size(element-margin);
-					}
-				}
-			}
-
-			&.major {
-				height: auto;
-				min-height: 0;
-				max-height: none;
+		@include breakpoint('<=xlarge') {
+			&.wrapper {
+				padding-bottom: 2rem;
+				padding-top: 14rem;
 			}
 		}
 
-		@include breakpoint(xsmall) {
-			@include padding(4em, 0, (2em, 0, 0, 0));
+		@include breakpoint('<=large') {
+			&.wrapper {
+				margin-left: auto;
+				margin-right: auto;
+				max-width: 100%;
+				padding-bottom: 2.5rem;
+				padding-top: 10rem;
+				text-align: center;
+			}
 
-			> .inner {
-				.content {
-					p {
-						br {
-							display: none;
-						}
-					}
+			ul {
+				&.actions {
+					@include vendor('justify-content', 'center');
 				}
 			}
 
-			&.major {
-				@include padding(6em, 0, (2em, 0, 0, 0));
+			.inner {
+				@include vendor('flex-direction', 'row');
+				@include vendor('flex-wrap', 'wrap');
+			}
+
+			.content {
+				@include vendor('order', '2');
+				padding-right: 0;
+				text-align: center;
+				width: 100%;
+			}
+
+			.image-wrapper {
+				@include vendor('order', '1');
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: _size(element-margin);
+				width: 30rem;
+				max-width: 100%;
+			}
+
+			body.is-preload & {
+				.content {
+					@include vendor('transform', 'translateY(0.5rem)');
+				}
+
+				.image-wrapper {
+					@include vendor('transform', 'translateY(-0.5rem)');
+				}
+			}
+		}
+
+		@include breakpoint('<=medium') {
+			&.wrapper {
+				padding-bottom: 1rem;
+				padding-top: 11rem;
+			}
+
+			.image-wrapper {
+				width: 40rem;
+			}
+		}
+
+		@include breakpoint('<=small') {
+			&.wrapper {
+				max-width: 100%;
+				padding-top: 10rem;
+			}
+
+			.image-wrapper {
+				width: 290px;
+				.image {
+					top: 0.75rem;
+				}
+			}
+		}
+
+		@include breakpoint('<=xsmall') {
+			.image-wrapper {
+				.image {
+					top: 0.6rem;
+				}
 			}
 		}
 	}

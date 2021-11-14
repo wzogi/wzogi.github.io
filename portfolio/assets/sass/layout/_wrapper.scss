@@ -1,28 +1,45 @@
 ///
-/// Forty by Pixelarity
+/// Threshold by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
 
-/* Wrapper */
+/* Main Wrapper */
 
 	#wrapper {
-		@include vendor('transition', (
-			'filter #{_duration(menu)} ease',
-			'-webkit-filter #{_duration(menu)} ease',
-			'opacity 0.375s ease-out'
-		));
-		padding-top: 3.25em;
+		section {
+			&:first-child {
+				&.wrapper {
+					&.style1 {
+						&:before {
+							background: _palette(bg);
+							content: '';
+							height: 19.5rem;
+							left: 0;
+							position: absolute;
+							top: 0;
+							width: 100%;
+							z-index: _misc(z-index-base) + 1;
+						}
+					}
+				}
+			}
 
-		&.is-transitioning {
-			opacity: 0;
-		}
-
-		> * {
-			@include inner;
-		}
-
-		@include breakpoint(small) {
-			padding-top: 2.75em;
+			&:last-child {
+				&.wrapper {
+					&.style1 {
+						&:before {
+							background: _palette(bg);
+							bottom: 0;
+							content: '';
+							height: 15rem;
+							left: 0;
+							position: absolute;
+							width: 100%;
+							z-index: _misc(z-index-base) + 1;
+						}
+					}
+				}
+			}
 		}
 	}

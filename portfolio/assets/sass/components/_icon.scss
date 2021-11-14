@@ -1,5 +1,5 @@
 ///
-/// Forty by Pixelarity
+/// Threshold by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -15,35 +15,62 @@
 			display: none;
 		}
 
-		&.alt {
+		&.solid {
 			&:before {
-				background-color: _palette(fg-bold);
-				border-radius: 100%;
-				color: _palette(bg);
-				display: inline-block;
-				height: 2em;
-				line-height: 2em;
-				text-align: center;
-				width: 2em;
+				font-weight: 900;
 			}
 		}
-	}
 
-	a.icon {
-		&.alt {
+		&.brands {
 			&:before {
-				@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');
+				font-family: 'Font Awesome 5 Brands';
+			}
+		}
+
+		&.alt {
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			display: block;
+			height: 2.75rem;
+			line-height: 2.75rem;
+			margin: 0 auto _size(element-margin) auto;
+			text-align: center;
+			width: 2.75rem;
+
+			&:before {
+				color: _palette(accent1);
+				font-size: 1.15rem;
+				position: relative;
+				top: 0.05rem;
 			}
 
-			&:hover {
+			&:after {
+				@include vendor('transform', 'rotate(45deg)');
+				border-radius: _size(border-radius) * 2;
+				border: _size(border-width) solid _palette(border);
+				content: '';
+				display: block;
+				height: 2.75rem;
+				left: 50%;
+				margin: -1.375rem 0 0 -1.375rem;
+				position: absolute;
+				top: 50%;
+				width: 2.75rem;
+			}
+
+			&.major {
+				height: 5rem;
+				line-height: 5rem;
+				width: 5rem;
+
 				&:before {
-					background-color: _palette(accent1);
+					font-size: 1.90rem;
 				}
-			}
 
-			&:active {
-				&:before {
-					background-color: desaturate(darken(_palette(accent1), 15), 5);
+				&:after {
+					height: 5rem;
+					width: 5rem;
+					margin: -2.5rem 0 0 -2.5rem;
 				}
 			}
 		}

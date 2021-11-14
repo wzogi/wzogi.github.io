@@ -1,5 +1,5 @@
 ///
-/// Forty by Pixelarity
+/// Threshold by Pixelarity
 /// pixelarity.com | hello@pixelarity.com
 /// License: pixelarity.com/license
 ///
@@ -28,14 +28,14 @@
 		}
 
 		td {
-			padding: 0.75em 0.75em;
+			padding: 0.75rem 0.75rem;
 		}
 
 		th {
 			color: _palette(fg-bold);
-			font-size: 0.9em;
+			font-size: 0.9rem;
 			font-weight: _font(weight-bold);
-			padding: 0 0.75em 0.75em 0.75em;
+			padding: 0 0.75rem 0.75rem 0.75rem;
 			text-align: left;
 		}
 
@@ -75,7 +75,7 @@
 			}
 
 			tfoot {
-				border-top: 0;
+				border-top: 0 ;
 			}
 		}
 	}
