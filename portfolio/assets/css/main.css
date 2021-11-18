@@ -3089,7 +3089,7 @@ input, select, textarea {
 				-ms-align-self: -ms-stretch;
 				align-self: stretch;
 				margin: 0;
-				min-width: 40%;
+				min-width: 60%;
 			}
 
 				.spotlights .spotlight .image.alt {
@@ -3105,7 +3105,7 @@ input, select, textarea {
 				}
 
 			.spotlights .spotlight .content {
-				min-width: 60%;
+				min-width: 40%;
 				padding: 5.5rem;
 			}
 
