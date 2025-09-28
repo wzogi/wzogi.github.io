@@ -89,13 +89,16 @@
 								<div class="inner">
 									<h2>Contact</h2>
 									<div class="content">
-										<form method="post" action="https://formspree.io/development@willoneill.com">
-											<div class="field half first"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="field half"><input type="email" name="email" id="email" placeholder="Email" /></div>
-											<div class="field"><textarea name="message" id="message" placeholder="Message" rows="5"></textarea></div>
-											<ul class="actions">
-												<li><input type="submit" value="Send" /></li>
-											</ul>
+										<!-- modify this form HTML and place wherever you want your form -->
+										<form action="https://formspree.io/f/xwprvzae" method="POST">
+  										<label>
+    									Your email: <input type="email" name="email">
+										</label>
+  										<label>
+    									Your message: <textarea name="message"></textarea>
+  										</label>
+  										<!-- your other form fields go here -->
+  										<button type="submit">Send</button>
 										</form>
 									</div>
 									<ul class="icons">
